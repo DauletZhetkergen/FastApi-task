@@ -1,5 +1,8 @@
 import logging
 
+from app.config import main_logger_path
+
+
 def get_logger(name):
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
@@ -10,7 +13,7 @@ def get_logger(name):
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
 
-    file_handler = logging.FileHandler("logs/app.log")
+    file_handler = logging.FileHandler(main_logger_path)
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)

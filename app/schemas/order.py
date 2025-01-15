@@ -48,3 +48,7 @@ class OrderShow(BaseModel):
     products: List[ProductBase]
     class Config:
         orm_mode = True
+
+
+class OrderDeleted(BaseModel):
+    order_id: int

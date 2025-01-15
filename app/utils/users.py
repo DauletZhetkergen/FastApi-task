@@ -4,14 +4,14 @@ import string
 from datetime import datetime, timedelta
 
 from fastapi import HTTPException
-from pydantic_core._pydantic_core import ValidationError
 from sqlalchemy import and_, select, insert
 
-from app import database
 from app.database.db import database_controller
 from app.models.users import UserModel, TokenModel
-from app.schemas import users as user_schema
-from app.schemas.users import UserCreate, AuthData, TokenBase
+from app.schemas.users import UserCreate, TokenBase, User
+from app.utils.logger import get_logger
+
+logger = get_logger(__name__)
 
 
 def get_random_string(length=12):
@@ -26,6 +26,7 @@ def hash_password(password: str, salt: str = None):
 
 
 def validate_password(password: str, hashed_password: str):
+    logger.info("Validating password")
     salt, hashed = hashed_password.split("$")
     return hash_password(password, salt) == hashed
 
@@ -36,6 +37,7 @@ async def get_user_by_username(username: str):
 
 
 async def get_user_by_token(token: str):
+    logger.info("Get user by token")
     query = (
         select(UserModel)  # Выбираем только username из UserModel
         .join(TokenModel, TokenModel.user_id == UserModel.id)  # Джоин по user_id
@@ -50,6 +52,7 @@ async def get_user_by_token(token: str):
 
 
 async def create_user_token(user_id: int):
+    logger.info("Create new token")
     query = (
         insert(TokenModel)
         .values(expires=datetime.now() + timedelta(minutes=10), user_id=user_id)
@@ -77,8 +80,8 @@ async def create_user(user: UserCreate):
     )
     user_id = await database_controller.execute(query)
     token_data = await create_user_token(user_id)
-
-    return {**user.dict(), "id": user_id, "is_active": True, "token": token_data}
+    user = User(token=token_data, id=user_id, username=user.username)
+    return user
 
 
 async def authentication(user_data):

@@ -4,6 +4,6 @@ from app.routes.admin import admin_router
 
 
 def include_routers(app):
-    app.include_router(user_router,tags=["user"])
-    app.include_router(order_router,tags=["order"])
-    app.include_router(admin_router,tags=["admin"])
+    app.include_router(prefix="/api", router=user_router, tags=["user"])
+    app.include_router(prefix="/api", router=order_router, tags=["order"])
+    app.include_router(prefix="/api", router=admin_router, tags=["admin"])

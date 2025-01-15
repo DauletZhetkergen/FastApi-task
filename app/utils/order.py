@@ -3,7 +3,7 @@ from sqlalchemy import and_, select, insert, update
 
 from app.database.db import database_controller
 from app.models.order import ProductModel, OrderModel, StatusEnum
-from app.schemas.order import OrderShow
+from app.schemas.order import OrderShow, OrderBase, OrderDeleted
 from app.utils.cache import get_order_from_cache, set_order_in_cache, delete_from_cache
 from app.utils.logger import get_logger
 
@@ -20,8 +20,10 @@ async def create_order_util(order_data, current_user):
             product = select(ProductModel).filter(ProductModel.product_id == item.product_id)
             product_model = await database_controller.fetch_one(product)
             if not product_model:
+                logger.warn(f"Product with ID {item.product_id} not found")
                 raise HTTPException(status_code=404, detail=f"Product with ID {item.product_id} not found")
             if product_model.quantity < item.quantity:
+                logger.warn(f"Not enough quantity for product ID {item.product_id}")
                 raise HTTPException(
                     status_code=400,
                     detail=f"Not enough quantity for product ID {item.product_id}"
@@ -42,24 +44,34 @@ async def create_order_util(order_data, current_user):
         )
         order_id = await database_controller.execute(order_query)
         logger.info(f"Order created id:{order_id}")
-        return {"Order id:": order_id, "Total price": total_price, "Status": StatusEnum.pending}
+        order = OrderBase(customer_name=order_data.customer_name,
+                          total_price=total_price,
+                          order_id=order_id,
+                          status=StatusEnum.pending,
+                          )
+        return order
 
 
 # FIXME down
 async def get_orders_filter(status, min_price, max_price, current_user):
     query = select(OrderModel).where(OrderModel.deleted == False)
+    filters = ""
     if not current_user.is_admin:
         query = query.where(OrderModel.user_id == current_user.id)
 
     if status is not None:
+        filters += f"status -> {status.value}"
         query = query.where(OrderModel.status == status)
 
     if min_price is not None:
+        filters += f"min_price -> {min_price}"
         query = query.where(OrderModel.total_price >= min_price)
     if max_price is not None:
+        filters += f"max_price -> {max_price}"
         query = query.where(OrderModel.total_price <= max_price)
 
     order_list = await database_controller.fetch_all(query)
+    logger.info(f"GET orders with: {filters}")
 
     return order_list
 
@@ -71,7 +83,7 @@ async def updating_order(order_id, status, current_user):
     update_query = update(OrderModel).where(OrderModel.order_id == order_id).values(status=status).returning(OrderModel)
     updated_order = await database_controller.fetch_one(update_query)
     await delete_from_cache(order_id)
-    logger.info(f"Changing order id:{order_id} status {older_status}->{status}")
+    logger.info(f"Changing order id:{order_id} status {older_status.status}->{status}")
     return updated_order
 
 
@@ -102,7 +114,8 @@ async def delete_softly_order(order_id, current_user):
     await database_controller.execute(delete_quert)
     await delete_from_cache(order_id)
     logger.info(f"Order id:{order_id} deleted")
-    return {f"Order id:{order_id} deleted"}
+    order = OrderDeleted(order_id=order_id)
+    return order
 
 
 async def check_for_own_exists(order_id, current_user):
@@ -110,9 +123,11 @@ async def check_for_own_exists(order_id, current_user):
                                                     OrderModel.deleted == False))
     order_exist = await database_controller.fetch_one(get_order_query)
     if not order_exist:
+        logger.warn(f"Order with ID {order_id} not found")
         raise HTTPException(status_code=404, detail=f"Order with ID {order_id} not found")
     if not current_user.is_admin:
         get_order_query = get_order_query.where(OrderModel.user_id == current_user.id)
         check_order_user = await database_controller.fetch_one(get_order_query)
         if not check_order_user:
-            raise HTTPException(status_code=404, detail=f"Order with ID {order_id} not your")
+            logger.warn(f"User:{current_user.id} Not enough permissions")
+            raise HTTPException(status_code=404, detail=f"Not enough permissions")

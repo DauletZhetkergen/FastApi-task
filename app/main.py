@@ -2,10 +2,11 @@ from fastapi import FastAPI
 import uvicorn
 from app.database.db import database_controller
 from app.routes import include_routers
+from app.utils.middleware import MetricsMiddleware
 
 app = FastAPI()
 include_routers(app)
-
+app.middleware(MetricsMiddleware)
 
 
 @app.on_event("startup")
@@ -19,6 +20,5 @@ async def shutdown():
 
 
 if __name__ == '__main__':
-
 
     uvicorn.run(app, host="0.0.0.0", port=8000)

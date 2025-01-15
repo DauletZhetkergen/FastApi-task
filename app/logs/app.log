@@ -82,3 +82,54 @@
 2025-01-15 20:48:15,166 - app.routes.auth - INFO - Authenticating daulet
 2025-01-15 20:51:16,684 - app.routes.order - INFO - User:1 GET orders
 2025-01-15 20:51:30,706 - app.routes.admin - INFO - User:2 GET orders
+2025-01-16 00:32:18,793 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 00:42:44,949 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 01:31:01,890 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 01:31:09,823 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 01:31:55,302 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 01:31:55,334 - app.utils.cache - INFO - Add order_id:3 to cache
+2025-01-16 01:32:00,135 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 01:32:02,778 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 01:32:05,212 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 01:32:21,987 - app.routes.order - INFO - Updating order id:3
+2025-01-16 01:32:22,135 - app.utils.cache - INFO - Delete order_id:3 from cache
+2025-01-16 01:32:22,135 - app.utils.order - INFO - Changing order id:3 status <databases.backends.common.records.Record object at 0x000002DE3F53B930>->StatusEnum.confirmed
+2025-01-16 01:32:33,804 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 01:32:33,815 - app.utils.cache - INFO - Add order_id:3 to cache
+2025-01-16 02:58:00,924 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 02:58:14,244 - app.routes.order - INFO - Creating a new order
+2025-01-16 02:58:14,297 - app.utils.order - INFO - Order created id:6
+2025-01-16 02:58:55,638 - app.routes.order - INFO - Creating a new order
+2025-01-16 02:58:55,672 - app.utils.order - INFO - Order created id:7
+2025-01-16 03:00:36,878 - app.routes.order - INFO - Creating a new order
+2025-01-16 03:00:36,926 - app.utils.order - INFO - Order created id:8
+2025-01-16 03:02:27,550 - app.routes.order - INFO - Creating a new order
+2025-01-16 03:02:27,577 - app.utils.order - INFO - Order created id:9
+2025-01-16 03:07:10,837 - app.routes.auth - INFO - Creating a new user
+2025-01-16 03:29:35,072 - app.routes.auth - INFO - Authenticating daulet1
+2025-01-16 03:29:39,226 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 04:01:07,856 - app.routes.auth - INFO - Creating a new user
+2025-01-16 04:02:21,729 - app.routes.auth - INFO - Creating a new user
+2025-01-16 04:02:21,915 - app.utils.users - INFO - Create new token
+2025-01-16 04:04:27,463 - app.routes.auth - INFO - Authenticating admin
+2025-01-16 04:04:27,466 - app.utils.users - INFO - Validating password
+2025-01-16 04:04:27,523 - app.utils.users - INFO - Create new token
+2025-01-16 04:06:39,181 - app.routes.auth - INFO - Authenticating admin
+2025-01-16 04:06:39,190 - app.utils.users - INFO - Validating password
+2025-01-16 04:06:39,247 - app.utils.users - INFO - Create new token
+2025-01-16 04:07:23,116 - app.routes.auth - INFO - Authenticating admin
+2025-01-16 04:07:23,125 - app.utils.users - INFO - Validating password
+2025-01-16 04:07:23,181 - app.utils.users - INFO - Create new token
+2025-01-16 04:07:30,943 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:07:54,307 - app.utils.users - INFO - Get user by token
+2025-01-16 04:07:54,317 - app.routes.order - INFO - User:5 GET orders
+2025-01-16 04:07:58,721 - app.utils.users - INFO - Get user by token
+2025-01-16 04:07:58,725 - app.routes.order - INFO - User:5 GET orders
+2025-01-16 04:10:01,698 - app.utils.users - INFO - Get user by token
+2025-01-16 04:10:01,707 - app.routes.order - INFO - User:5 GET orders
+2025-01-16 04:10:26,611 - app.utils.users - INFO - Get user by token
+2025-01-16 04:10:26,620 - app.routes.order - INFO - User:5 GET orders
+2025-01-16 04:10:26,637 - app.utils.order - INFO - GET orders with: 
+2025-01-16 04:10:38,263 - app.utils.users - INFO - Get user by token
+2025-01-16 04:10:38,267 - app.routes.order - INFO - User:5 GET orders
+2025-01-16 04:10:38,273 - app.utils.order - INFO - GET orders with: status -> StatusEnum.pending
