@@ -11,7 +11,7 @@ class StatusEnum(Enum):
     cancelled = "cancelled"
 
 class OrderModel(BaseOrder):
-    __tablename__ = "order"
+    __tablename__ = "Order"#FIXME
     order_id = Column(Integer, nullable=False, unique=True, primary_key=True, autoincrement=True)
     customer_name = Column(String, nullable=False)
     status = Column(sql_enum(StatusEnum), nullable=False, default=StatusEnum.pending)

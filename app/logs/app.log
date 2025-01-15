@@ -1,0 +1,8 @@
+2025-01-15 16:03:14,750 - app.routes.auth - INFO - Creating a new user
+2025-01-15 16:05:15,694 - app.routes.auth - INFO - Authenticating daulet2
+2025-01-15 16:09:50,225 - app.routes.auth - INFO - Authenticating daulet1
+2025-01-15 16:10:00,618 - app.routes.auth - INFO - Authenticating daulet2
+2025-01-15 16:12:23,541 - app.routes.order - INFO - Creating a new order
+2025-01-15 16:12:23,570 - app.utils.order - INFO - Order created id:7
+2025-01-15 16:14:27,067 - app.routes.order - INFO - Creating a new order
+2025-01-15 16:14:27,096 - app.utils.order - INFO - Order created id:8

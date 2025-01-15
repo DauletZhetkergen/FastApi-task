@@ -1,14 +1,45 @@
-import hashlib
-import random
-import string
-from datetime import datetime, timedelta
+
 
 from fastapi import HTTPException
-from pydantic_core._pydantic_core import ValidationError
-from sqlalchemy import and_, select, insert
+from sqlalchemy import and_, select, insert, update
 
-from app import database
 from app.database.db import database_controller
-from app.models.users import UserModel, TokenModel
-from app.schemas import users as user_schema
-from app.schemas.users import UserCreate, AuthData, TokenBase
+from app.models.order import ProductModel, OrderModel, StatusEnum
+from app.utils.logger import get_logger
+
+logger = get_logger(__name__)
+
+
+async def create_order_util(order_data):
+    total_price = 0
+    async with database_controller.transaction():
+        order_items = []
+        for item in order_data.products:
+            order_items.append({"product_id": item.product_id,
+                                "quantity": item.quantity})
+            product = select(ProductModel).filter(ProductModel.product_id == item.product_id)
+            product_model = await database_controller.fetch_one(product)
+            if not product_model:
+                raise HTTPException(status_code=404, detail=f"Product with ID {item.product_id} not found")
+            if product_model.quantity < item.quantity:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Not enough quantity for product ID {item.product_id}"
+                )
+            total_price = product_model.price * item.quantity
+
+            substract_query = (
+                update(ProductModel)
+                .where(ProductModel.product_id == item.product_id)
+                .values(quantity=ProductModel.quantity - item.quantity)
+            )
+            await database_controller.execute(substract_query)
+        order_query = insert(OrderModel).values(
+            customer_name=order_data.customer_name,
+            status=StatusEnum.pending,
+            total_price=total_price,
+            products=order_items
+        )
+        order_id = await database_controller.execute(order_query)
+        logger.info(f"Order created id:{order_id}")
+        return {"Order id:": order_id,"Total price":total_price,"Status":StatusEnum.pending}

@@ -29,14 +29,11 @@ class OrderItem(BaseModel):
 
 class OrderBase(BaseModel):
     customer_name: str
-    status: StatusEnum
 
 class OrderCreate(OrderBase):
     products: List[OrderItem]
 
 class Order(OrderBase):
-    order_id: int
-    total_price: Decimal
     products: List[OrderItem]
 
     class Config:
