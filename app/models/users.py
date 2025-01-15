@@ -10,7 +10,7 @@ class UserModel(Base):
     username = Column(String, unique=True, index=True)
     hashed_password = Column(String)
     created_at = Column(DateTime, server_default=func.now())
-    is_admin = Column(Boolean, default=False)
+    is_admin = Column(Boolean, server_default=text('false'))
 
 
 class TokenModel(Base):

@@ -12,10 +12,6 @@ class ProductBase(BaseModel):
     quantity: int
 
 
-class ProductCreate(ProductBase):
-    pass
-
-
 class Product(ProductBase):
     product_id: int
 
@@ -42,5 +38,12 @@ class OrderCreate(BaseModel):
 class Order(OrderBase):
     products: List[OrderItem]
 
+    class Config:
+        orm_mode = True
+
+
+class OrderShow(BaseModel):
+    order: OrderBase
+    products: List[ProductBase]
     class Config:
         orm_mode = True

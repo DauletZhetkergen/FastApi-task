@@ -3,6 +3,7 @@ from sqlalchemy import and_, select, insert, update
 
 from app.database.db import database_controller
 from app.models.order import ProductModel, OrderModel, StatusEnum
+from app.schemas.order import OrderShow
 from app.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -57,5 +58,44 @@ async def get_orders_filter(status, min_price, max_price, current_user):
 
     order_list = await database_controller.fetch_all(query)
 
-
     return order_list
+
+
+async def updating_order(order_id, status, current_user):
+    await check_for_own_exists(order_id, current_user)
+
+    get_older_status_query = select(OrderModel.status).where(OrderModel.order_id == order_id)
+    older_status = await database_controller.fetch_one(get_older_status_query)
+    update_query = update(OrderModel).where(OrderModel.order_id == order_id).values(status=status).returning(OrderModel)
+    updated_order = await database_controller.fetch_one(update_query)
+    logger.info(f"Changing order id:{order_id} status {older_status}->{status}")
+    return updated_order
+
+
+async def get_one_order(order_id, current_user):
+    await check_for_own_exists(order_id, current_user)
+
+    order_query = select(OrderModel).where(OrderModel.order_id == order_id)
+    order = await database_controller.fetch_one(order_query)
+
+    ordered_products = {item["product_id"]: item["quantity"] for item in order.products}
+    product_query = select(ProductModel).where(ProductModel.product_id.in_(ordered_products.keys()))
+    products = await database_controller.fetch_all(product_query)
+    products_list = [
+        {**dict(product),"quantity": ordered_products[product["product_id"]]} for product in products]
+
+    return OrderShow(order=dict(order), products=products_list)
+
+
+async def delete_softly_order(order_id,current_user):
+    pass
+
+async def check_for_own_exists(order_id, current_user):
+    get_order_query = select(OrderModel).where(OrderModel.order_id == order_id)
+    order_exist = await database_controller.fetch_one(get_order_query)
+    if not order_exist:
+        raise HTTPException(status_code=404, detail=f"Order with ID {order_id} not found")
+    get_order_query = get_order_query.where(OrderModel.user_id == current_user.id)
+    check_order_user = await database_controller.fetch_one(get_order_query)
+    if not check_order_user:
+        raise HTTPException(status_code=404, detail=f"Order with ID {order_id} not your")

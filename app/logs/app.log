@@ -25,3 +25,23 @@
 2025-01-15 17:54:10,549 - app.routes.auth - INFO - Authenticating daulet
 2025-01-15 18:04:28,813 - app.routes.auth - INFO - Authenticating daulet
 2025-01-15 18:10:28,714 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 18:58:26,790 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 18:58:53,618 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 18:58:59,280 - app.routes.order - INFO - Updating order id:3
+2025-01-15 18:59:33,088 - app.routes.auth - INFO - Creating a new user
+2025-01-15 19:00:19,986 - app.routes.order - INFO - Updating order id:1
+2025-01-15 19:00:20,121 - app.utils.order - INFO - Changing order id:1 status <databases.backends.common.records.Record object at 0x000002BC733C0C20>->StatusEnum.confirmed
+2025-01-15 19:00:38,565 - app.routes.auth - INFO - Authenticating daulet1
+2025-01-15 19:00:41,847 - app.routes.auth - INFO - Authenticating daulet1
+2025-01-15 19:00:56,455 - app.routes.auth - INFO - Authenticating daulet1
+2025-01-15 19:01:03,242 - app.routes.order - INFO - Updating order id:1
+2025-01-15 19:01:24,852 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 19:01:29,484 - app.routes.order - INFO - Updating order id:1
+2025-01-15 19:01:29,615 - app.utils.order - INFO - Changing order id:1 status <databases.backends.common.records.Record object at 0x000002BC733C1710>->StatusEnum.cancelled
+2025-01-15 19:11:21,266 - app.routes.auth - INFO - Creating a new user
+2025-01-15 19:11:25,938 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 19:11:28,276 - app.routes.order - INFO - Creating a new order
+2025-01-15 19:11:28,308 - app.utils.order - INFO - Order created id:1
+2025-01-15 19:32:20,366 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 19:34:30,133 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 19:38:42,581 - app.routes.auth - INFO - Authenticating daulet

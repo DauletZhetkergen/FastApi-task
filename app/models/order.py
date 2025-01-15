@@ -1,13 +1,13 @@
 from enum import Enum
 
-from sqlalchemy import Column, Integer, String, Enum as sql_enum, DECIMAL, JSON, ForeignKey
+from sqlalchemy import Column, Integer, String, Enum as sql_enum, DECIMAL, JSON, ForeignKey,Boolean,text
 
 from app.models import Base
 
 
 class StatusEnum(Enum):
-    confirmed = "confirmed"
     pending = "pending"
+    confirmed = "confirmed"
     cancelled = "cancelled"
 
 class OrderModel(Base):
@@ -18,6 +18,7 @@ class OrderModel(Base):
     status = Column(sql_enum(StatusEnum), nullable=False, default=StatusEnum.pending)
     total_price = Column(DECIMAL(10, 2), nullable=False)
     products = Column(JSON, nullable=False)
+    deleted = Column(Boolean, server_default=text('false'))
 
 class ProductModel(Base):
     __tablename__ = 'products'
