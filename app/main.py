@@ -1,8 +1,6 @@
 from fastapi import FastAPI
-from sqlalchemy import select
 
 from app.database.db import  database_controller
-from app.models.users import User
 from app.routes import include_routers
 
 

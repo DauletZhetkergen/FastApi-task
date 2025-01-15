@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-class User(Base):
+class UserModel(Base):
     __tablename__ = "users"
     id = Column(Integer, nullable=False, unique=True, primary_key=True, autoincrement=True)
     username = Column(String, unique=True, index=True)
@@ -13,7 +13,7 @@ class User(Base):
     is_admin = Column(Boolean, default=False)
 
 
-class Token(Base):
+class TokenModel(Base):
     __tablename__ = "user_tokens"
     id = Column(Integer, primary_key=True, index=True)
     token = Column(UUID(as_uuid=False), nullable=False, unique=True, index=True, server_default=func.uuid_generate_v4())
