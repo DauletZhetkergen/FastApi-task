@@ -7,7 +7,7 @@ from app.schemas.users import UserCreate, TokenBase, AuthData, UserBase, User
 from app.schemas.order import Order, OrderCreate, OrderShow
 from app.utils.dependecies import get_current_user
 from app.utils.logger import get_logger
-from app.utils.order import create_order_util, get_orders_filter, updating_order, get_one_order
+from app.utils.order import create_order_util, get_orders_filter, updating_order, get_one_order, delete_softly_order
 
 order_router = APIRouter()
 logger = get_logger(__name__)

@@ -27,6 +27,7 @@ class OrderItem(BaseModel):
 class OrderBase(BaseModel):
     customer_name: str
     status: StatusEnum
+    order_id: int
     total_price: float
 
 

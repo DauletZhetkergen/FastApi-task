@@ -50,3 +50,4 @@
 2025-01-15 20:13:11,491 - app.utils.order - INFO - Order id:1 deleted
 2025-01-15 20:13:42,268 - app.routes.order - INFO - User:1 GET orders
 2025-01-15 20:14:52,660 - app.routes.order - INFO - User:1 GET orders
+2025-01-15 20:16:46,075 - app.routes.order - INFO - User:1 GET orders

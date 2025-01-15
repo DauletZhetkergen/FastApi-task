@@ -46,7 +46,8 @@ async def create_order_util(order_data, current_user):
 
 
 async def get_orders_filter(status, min_price, max_price, current_user):
-    query = select(OrderModel).where(OrderModel.user_id == current_user.id)
+    query = select(OrderModel).where(and_(OrderModel.user_id == current_user.id,
+                                          OrderModel.deleted==False))
 
     if status is not None:
         query = query.where(OrderModel.status == status)
@@ -82,16 +83,22 @@ async def get_one_order(order_id, current_user):
     product_query = select(ProductModel).where(ProductModel.product_id.in_(ordered_products.keys()))
     products = await database_controller.fetch_all(product_query)
     products_list = [
-        {**dict(product),"quantity": ordered_products[product["product_id"]]} for product in products]
+        {**dict(product), "quantity": ordered_products[product["product_id"]]} for product in products]
 
     return OrderShow(order=dict(order), products=products_list)
 
 
-async def delete_softly_order(order_id,current_user):
-    pass
+async def delete_softly_order(order_id, current_user):
+    await check_for_own_exists(order_id, current_user)
+    delete_quert = update(OrderModel).where(OrderModel.order_id == order_id).values(deleted=True)
+    await database_controller.execute(delete_quert)
+    logger.info(f"Order id:{order_id} deleted")
+    return {f"Order id:{order_id} deleted"}
+
 
 async def check_for_own_exists(order_id, current_user):
-    get_order_query = select(OrderModel).where(OrderModel.order_id == order_id)
+    get_order_query = select(OrderModel).where(and_(OrderModel.order_id == order_id,
+                                                    OrderModel.deleted == False))
     order_exist = await database_controller.fetch_one(get_order_query)
     if not order_exist:
         raise HTTPException(status_code=404, detail=f"Order with ID {order_id} not found")
