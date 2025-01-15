@@ -51,3 +51,34 @@
 2025-01-15 20:13:42,268 - app.routes.order - INFO - User:1 GET orders
 2025-01-15 20:14:52,660 - app.routes.order - INFO - User:1 GET orders
 2025-01-15 20:16:46,075 - app.routes.order - INFO - User:1 GET orders
+2025-01-15 20:31:04,110 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 20:31:31,522 - app.routes.auth - INFO - Creating a new user
+2025-01-15 20:31:38,269 - app.routes.auth - INFO - Authenticating admin
+2025-01-15 20:31:42,237 - app.routes.admin - INFO - User:2 GET orders
+2025-01-15 20:32:00,731 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 20:32:21,505 - app.routes.order - INFO - Creating a new order
+2025-01-15 20:32:52,964 - app.routes.order - INFO - Creating a new order
+2025-01-15 20:32:52,976 - app.utils.order - INFO - Order created id:2
+2025-01-15 20:34:53,081 - app.routes.order - INFO - Creating a new order
+2025-01-15 20:34:53,114 - app.utils.order - INFO - Order created id:3
+2025-01-15 20:35:04,446 - app.routes.order - INFO - Creating a new order
+2025-01-15 20:35:04,484 - app.utils.order - INFO - Order created id:4
+2025-01-15 20:36:21,534 - app.routes.admin - INFO - User:2 GET orders
+2025-01-15 20:37:09,860 - app.routes.order - INFO - Creating a new order
+2025-01-15 20:37:20,222 - app.routes.admin - INFO - User:2 GET orders
+2025-01-15 20:37:33,732 - app.routes.admin - INFO - User:2 GET orders
+2025-01-15 20:40:27,659 - app.routes.admin - INFO - User:2 GET orders
+2025-01-15 20:41:34,274 - app.routes.auth - INFO - Authenticating daulet1
+2025-01-15 20:41:42,912 - app.routes.auth - INFO - Creating a new user
+2025-01-15 20:41:48,555 - app.routes.auth - INFO - Authenticating daulet1
+2025-01-15 20:42:12,320 - app.routes.order - INFO - Creating a new order
+2025-01-15 20:42:12,332 - app.utils.order - INFO - Order created id:5
+2025-01-15 20:42:34,752 - app.routes.auth - INFO - Authenticating admin
+2025-01-15 20:42:42,974 - app.routes.admin - INFO - User:2 GET orders
+2025-01-15 20:45:10,969 - app.routes.admin - INFO - Updating order id:5
+2025-01-15 20:45:11,101 - app.utils.order - INFO - Changing order id:5 status <databases.backends.common.records.Record object at 0x0000014F36095470>->StatusEnum.confirmed
+2025-01-15 20:45:47,037 - app.routes.order - INFO - Updating order id:4
+2025-01-15 20:47:36,158 - app.routes.auth - INFO - Authenticating daulet1
+2025-01-15 20:48:15,166 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 20:51:16,684 - app.routes.order - INFO - User:1 GET orders
+2025-01-15 20:51:30,706 - app.routes.admin - INFO - User:2 GET orders

@@ -25,8 +25,7 @@ async def create_order_util(order_data, current_user):
                     status_code=400,
                     detail=f"Not enough quantity for product ID {item.product_id}"
                 )
-            total_price = product_model.price * item.quantity
-
+            total_price += product_model.price * item.quantity
             substract_query = (
                 update(ProductModel)
                 .where(ProductModel.product_id == item.product_id)
@@ -46,8 +45,10 @@ async def create_order_util(order_data, current_user):
 
 
 async def get_orders_filter(status, min_price, max_price, current_user):
-    query = select(OrderModel).where(and_(OrderModel.user_id == current_user.id,
-                                          OrderModel.deleted==False))
+
+    query = select(OrderModel).where(OrderModel.deleted == False)
+    if not  current_user.is_admin:
+        query = query.where(OrderModel.user_id == current_user.id)
 
     if status is not None:
         query = query.where(OrderModel.status == status)
@@ -63,8 +64,7 @@ async def get_orders_filter(status, min_price, max_price, current_user):
 
 
 async def updating_order(order_id, status, current_user):
-    await check_for_own_exists(order_id, current_user)
-
+    await check_for_own_exists(order_id, current_user, current_user)
     get_older_status_query = select(OrderModel.status).where(OrderModel.order_id == order_id)
     older_status = await database_controller.fetch_one(get_older_status_query)
     update_query = update(OrderModel).where(OrderModel.order_id == order_id).values(status=status).returning(OrderModel)
@@ -102,7 +102,8 @@ async def check_for_own_exists(order_id, current_user):
     order_exist = await database_controller.fetch_one(get_order_query)
     if not order_exist:
         raise HTTPException(status_code=404, detail=f"Order with ID {order_id} not found")
-    get_order_query = get_order_query.where(OrderModel.user_id == current_user.id)
-    check_order_user = await database_controller.fetch_one(get_order_query)
-    if not check_order_user:
-        raise HTTPException(status_code=404, detail=f"Order with ID {order_id} not your")
+    if not current_user.is_admin:
+        get_order_query = get_order_query.where(OrderModel.user_id == current_user.id)
+        check_order_user = await database_controller.fetch_one(get_order_query)
+        if not check_order_user:
+            raise HTTPException(status_code=404, detail=f"Order with ID {order_id} not your")
