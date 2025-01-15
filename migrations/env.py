@@ -4,10 +4,10 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
-
+from sqlalchemy import MetaData
 from app.config import DB_NAME, DB_PORT, DB_PASSWORD, DB_USER, DB_HOST
-from app.models import users
-from app.models.users import Base
+from app.models.users import BaseUser
+from app.models.order import BaseOrder
 
 config = context.config
 
@@ -19,8 +19,9 @@ config.set_section_option(section, "DB_HOST", DB_HOST)
 config.set_section_option(section, "DB_PORT", DB_PORT)
 
 fileConfig(config.config_file_name)
+metadata = MetaData()
 
-target_metadata = Base.metadata
+target_metadata = [BaseUser.metadata, BaseOrder.metadata]
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
