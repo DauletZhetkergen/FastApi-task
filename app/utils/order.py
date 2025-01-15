@@ -1,5 +1,3 @@
-
-
 from fastapi import HTTPException
 from sqlalchemy import and_, select, insert, update
 
@@ -10,7 +8,7 @@ from app.utils.logger import get_logger
 logger = get_logger(__name__)
 
 
-async def create_order_util(order_data):
+async def create_order_util(order_data, current_user):
     total_price = 0
     async with database_controller.transaction():
         order_items = []
@@ -36,10 +34,28 @@ async def create_order_util(order_data):
             await database_controller.execute(substract_query)
         order_query = insert(OrderModel).values(
             customer_name=order_data.customer_name,
+            user_id=current_user.id,
             status=StatusEnum.pending,
             total_price=total_price,
             products=order_items
         )
         order_id = await database_controller.execute(order_query)
         logger.info(f"Order created id:{order_id}")
-        return {"Order id:": order_id,"Total price":total_price,"Status":StatusEnum.pending}
+        return {"Order id:": order_id, "Total price": total_price, "Status": StatusEnum.pending}
+
+
+async def get_orders_filter(status, min_price, max_price, current_user):
+    query = select(OrderModel).where(OrderModel.user_id == current_user.id)
+
+    if status is not None:
+        query = query.where(OrderModel.status == status)
+
+    if min_price is not None:
+        query = query.where(OrderModel.total_price >= min_price)
+    if max_price is not None:
+        query = query.where(OrderModel.total_price <= max_price)
+
+    order_list = await database_controller.fetch_all(query)
+
+
+    return order_list

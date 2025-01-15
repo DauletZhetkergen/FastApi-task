@@ -6,3 +6,22 @@
 2025-01-15 16:12:23,570 - app.utils.order - INFO - Order created id:7
 2025-01-15 16:14:27,067 - app.routes.order - INFO - Creating a new order
 2025-01-15 16:14:27,096 - app.utils.order - INFO - Order created id:8
+2025-01-15 16:30:03,354 - app.routes.auth - INFO - Authenticating daulet2
+2025-01-15 16:30:06,351 - app.routes.order - INFO - Creating a new order
+2025-01-15 16:42:56,355 - app.routes.auth - INFO - Authenticating daulet2
+2025-01-15 16:43:04,946 - app.routes.auth - INFO - Authenticating daulet2
+2025-01-15 16:43:20,013 - app.routes.auth - INFO - Creating a new user
+2025-01-15 16:43:27,321 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 16:43:36,792 - app.routes.order - INFO - Creating a new order
+2025-01-15 16:44:01,355 - app.routes.order - INFO - Creating a new order
+2025-01-15 16:44:01,381 - app.utils.order - INFO - Order created id:1
+2025-01-15 17:03:58,668 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 17:04:40,959 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 17:07:24,542 - app.routes.auth - INFO - Authenticating daulet2
+2025-01-15 17:07:28,365 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 17:08:43,102 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 17:12:47,626 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 17:22:56,169 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 17:54:10,549 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 18:04:28,813 - app.routes.auth - INFO - Authenticating daulet
+2025-01-15 18:10:28,714 - app.routes.auth - INFO - Authenticating daulet
