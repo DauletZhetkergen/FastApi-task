@@ -59,11 +59,10 @@ async def get_metrics():
 
         endpoint_counts = {}
         for line in lines:
-            match = re.search(r"Endpoint: (\S+) | Status: (\d+) | Time: (\S+)s", line)
+            match = re.search(r"Endpoint: (/api/[\w/]+?)(?:/\d+)?\s*\| Status: (\d+) \| Time: (\S+)s", line)
             if match:
                 endpoint = match.group(1)
                 status = match.group(2)
-
                 if endpoint not in endpoint_counts:
                     endpoint_counts[endpoint] = {"total": 0, "success": 0, "failure": 0}
                 endpoint_counts[endpoint]["total"] += 1

@@ -13,7 +13,7 @@ file_handler.setFormatter(formatter)
 logger_M.addHandler(file_handler)
 
 
-class MetricsMiddleware(BaseHTTPMiddleware):
+class   MetricsMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         start_time = time.time()
 

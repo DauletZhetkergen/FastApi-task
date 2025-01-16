@@ -133,3 +133,57 @@
 2025-01-16 04:10:38,263 - app.utils.users - INFO - Get user by token
 2025-01-16 04:10:38,267 - app.routes.order - INFO - User:5 GET orders
 2025-01-16 04:10:38,273 - app.utils.order - INFO - GET orders with: status -> StatusEnum.pending
+2025-01-16 04:13:12,316 - app.utils.users - INFO - Get user by token
+2025-01-16 04:13:12,325 - app.routes.order - INFO - User:5 GET orders
+2025-01-16 04:13:12,343 - app.utils.order - INFO - GET orders with: status -> pending
+2025-01-16 04:16:35,338 - app.routes.auth - INFO - Authenticating admin
+2025-01-16 04:16:35,347 - app.utils.users - INFO - Validating password
+2025-01-16 04:16:35,403 - app.utils.users - INFO - Create new token
+2025-01-16 04:16:51,069 - app.utils.users - INFO - Get user by token
+2025-01-16 04:16:51,076 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:16:51,077 - app.routes.admin - INFO - User:5 GET orders
+2025-01-16 04:16:51,098 - app.utils.order - INFO - GET orders with: 
+2025-01-16 04:17:05,792 - app.utils.users - INFO - Get user by token
+2025-01-16 04:17:05,796 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:17:05,796 - app.routes.admin - INFO - User:5 GET orders
+2025-01-16 04:17:05,800 - app.utils.order - INFO - GET orders with: 
+2025-01-16 04:17:08,672 - app.utils.users - INFO - Get user by token
+2025-01-16 04:17:08,676 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:17:08,677 - app.routes.admin - INFO - User:5 GET orders
+2025-01-16 04:17:08,682 - app.utils.order - INFO - GET orders with: status -> pending
+2025-01-16 04:17:10,267 - app.utils.users - INFO - Get user by token
+2025-01-16 04:17:10,272 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:17:10,273 - app.routes.admin - INFO - User:5 GET orders
+2025-01-16 04:17:10,278 - app.utils.order - INFO - GET orders with: status -> confirmed
+2025-01-16 04:17:11,916 - app.utils.users - INFO - Get user by token
+2025-01-16 04:17:11,923 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:17:11,924 - app.routes.admin - INFO - User:5 GET orders
+2025-01-16 04:17:11,929 - app.utils.order - INFO - GET orders with: status -> cancelled
+2025-01-16 04:17:18,339 - app.utils.users - INFO - Get user by token
+2025-01-16 04:17:18,342 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:17:18,343 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 04:17:18,356 - app.utils.cache - INFO - Add order_id:3 to cache
+2025-01-16 04:17:21,559 - app.utils.users - INFO - Get user by token
+2025-01-16 04:17:21,565 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:17:21,566 - app.utils.cache - INFO - Get order_id:2 from cache
+2025-01-16 04:17:21,580 - app.utils.cache - INFO - Add order_id:2 to cache
+2025-01-16 04:17:23,006 - app.utils.users - INFO - Get user by token
+2025-01-16 04:17:23,010 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:17:23,010 - app.utils.cache - INFO - Get order_id:1 from cache
+2025-01-16 04:17:23,014 - app.utils.order - WARNING - Order with ID 1 not found
+2025-01-16 04:25:36,803 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:31:48,648 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:33:45,925 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:36:04,769 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:36:40,818 - app.routes.auth - INFO - Authenticating admin
+2025-01-16 04:36:40,827 - app.utils.users - INFO - Validating password
+2025-01-16 04:36:40,883 - app.utils.users - INFO - Create new token
+2025-01-16 04:36:43,440 - app.utils.users - INFO - Get user by token
+2025-01-16 04:36:43,447 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:36:43,448 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 04:36:43,493 - app.utils.cache - INFO - Add order_id:3 to cache
+2025-01-16 04:36:48,102 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:46:08,067 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:48:24,577 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:48:56,945 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:49:15,076 - app.routes.admin - INFO - Getting metrics

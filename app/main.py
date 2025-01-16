@@ -6,7 +6,7 @@ from app.utils.middleware import MetricsMiddleware
 
 app = FastAPI()
 include_routers(app)
-app.middleware(MetricsMiddleware)
+app.add_middleware(MetricsMiddleware)
 
 
 @app.on_event("startup")
