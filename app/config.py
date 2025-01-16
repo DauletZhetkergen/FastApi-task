@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from dotenv import load_dotenv
 import os
 
@@ -9,6 +11,6 @@ DB_USER = os.getenv('POSTGRESS_DB_USER')
 DB_PASSWORD = os.getenv('POSTGRESS_DB_PASSWORD')
 DB_HOST = os.getenv('POSTGRES_DB_HOST')
 
-main_logger_path = os.getenv('MAIN_LOG_FILE_PATH')
-metric_logger_path = os.getenv('METRICS_LOG_FILE_PATH')
-
+base_dir = Path(__file__).resolve().parent
+main_logger_path = base_dir.joinpath(os.getenv('MAIN_LOG_FILE_PATH'))
+metric_logger_path = base_dir.joinpath(os.getenv('METRICS_LOG_FILE_PATH'))

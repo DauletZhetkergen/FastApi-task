@@ -187,3 +187,184 @@
 2025-01-16 04:48:24,577 - app.routes.admin - INFO - Getting metrics
 2025-01-16 04:48:56,945 - app.routes.admin - INFO - Getting metrics
 2025-01-16 04:49:15,076 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:52:22,240 - app.routes.admin - INFO - Getting metrics
+2025-01-16 05:59:33,458 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 05:59:33,471 - app.utils.users - INFO - Validating password
+2025-01-16 05:59:33,528 - app.utils.users - INFO - Create new token
+2025-01-16 06:01:05,777 - app.routes.auth - INFO - Authenticating daulets
+2025-01-16 06:03:22,073 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:04:14,880 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:08:28,489 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:08:28,499 - app.utils.users - INFO - Validating password
+2025-01-16 06:08:28,555 - app.utils.users - INFO - Create new token
+2025-01-16 06:09:33,130 - app.routes.auth - INFO - Authenticating test
+2025-01-16 06:10:13,846 - app.routes.auth - INFO - Authenticating test
+2025-01-16 06:11:55,859 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:11:55,867 - app.utils.users - INFO - Validating password
+2025-01-16 06:11:55,924 - app.utils.users - INFO - Create new token
+2025-01-16 06:18:12,357 - app.routes.auth - INFO - Creating a new user
+2025-01-16 06:21:05,337 - app.routes.auth - INFO - Creating a new user
+2025-01-16 06:21:05,519 - app.utils.users - INFO - Create new token
+2025-01-16 06:21:29,695 - app.routes.auth - INFO - Authenticating test
+2025-01-16 06:21:29,702 - app.utils.users - INFO - Validating password
+2025-01-16 06:21:29,758 - app.utils.users - INFO - Create new token
+2025-01-16 06:29:14,536 - app.routes.auth - INFO - Authenticating test
+2025-01-16 06:29:14,546 - app.utils.users - INFO - Validating password
+2025-01-16 06:29:14,602 - app.utils.users - INFO - Create new token
+2025-01-16 06:29:14,723 - app.utils.users - INFO - Get user by token
+2025-01-16 06:29:14,730 - app.routes.order - INFO - User:6 GET order:3
+2025-01-16 06:29:14,730 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 06:29:14,758 - app.utils.order - WARNING - User:6 Not enough permissions
+2025-01-16 06:29:37,795 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:29:37,804 - app.utils.users - INFO - Validating password
+2025-01-16 06:29:37,861 - app.utils.users - INFO - Create new token
+2025-01-16 06:29:37,993 - app.utils.users - INFO - Get user by token
+2025-01-16 06:29:37,998 - app.routes.order - INFO - User:1 GET order:3
+2025-01-16 06:29:37,999 - app.utils.cache - INFO - Get order_id:3 from cache
+2025-01-16 06:29:38,027 - app.utils.cache - INFO - Add order_id:3 to cache
+2025-01-16 06:32:09,287 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:32:09,295 - app.utils.users - INFO - Validating password
+2025-01-16 06:32:09,351 - app.utils.users - INFO - Create new token
+2025-01-16 06:32:09,473 - app.utils.users - INFO - Get user by token
+2025-01-16 06:32:41,080 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:32:41,089 - app.utils.users - INFO - Validating password
+2025-01-16 06:32:41,145 - app.utils.users - INFO - Create new token
+2025-01-16 06:32:41,182 - app.utils.users - INFO - Get user by token
+2025-01-16 06:33:10,222 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:33:10,230 - app.utils.users - INFO - Validating password
+2025-01-16 06:33:10,286 - app.utils.users - INFO - Create new token
+2025-01-16 06:33:10,416 - app.utils.users - INFO - Get user by token
+2025-01-16 06:33:36,491 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:33:36,499 - app.utils.users - INFO - Validating password
+2025-01-16 06:33:36,555 - app.utils.users - INFO - Create new token
+2025-01-16 06:33:36,678 - app.utils.users - INFO - Get user by token
+2025-01-16 06:33:36,685 - app.routes.order - INFO - Creating a new order
+2025-01-16 06:33:36,711 - app.utils.order - INFO - Order created id:10
+2025-01-16 06:34:41,399 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:34:41,408 - app.utils.users - INFO - Validating password
+2025-01-16 06:34:41,464 - app.utils.users - INFO - Create new token
+2025-01-16 06:34:41,545 - app.utils.users - INFO - Get user by token
+2025-01-16 06:34:41,551 - app.routes.order - INFO - User:1 GET orders
+2025-01-16 06:34:41,568 - app.utils.order - INFO - GET orders with: 
+2025-01-16 06:36:13,306 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:36:13,314 - app.utils.users - INFO - Validating password
+2025-01-16 06:36:13,369 - app.utils.users - INFO - Create new token
+2025-01-16 06:36:13,501 - app.utils.users - INFO - Get user by token
+2025-01-16 06:36:13,506 - app.routes.order - INFO - User:1 GET orders
+2025-01-16 06:36:13,524 - app.utils.order - INFO - GET orders with: status -> pending
+2025-01-16 06:38:09,689 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:38:09,698 - app.utils.users - INFO - Validating password
+2025-01-16 06:38:09,753 - app.utils.users - INFO - Create new token
+2025-01-16 06:38:09,868 - app.utils.users - INFO - Get user by token
+2025-01-16 06:38:45,042 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:38:45,050 - app.utils.users - INFO - Validating password
+2025-01-16 06:38:45,107 - app.utils.users - INFO - Create new token
+2025-01-16 06:38:45,243 - app.utils.users - INFO - Get user by token
+2025-01-16 06:40:37,141 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:40:37,150 - app.utils.users - INFO - Validating password
+2025-01-16 06:40:37,208 - app.utils.users - INFO - Create new token
+2025-01-16 06:40:37,333 - app.utils.users - INFO - Get user by token
+2025-01-16 06:40:49,776 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:40:49,785 - app.utils.users - INFO - Validating password
+2025-01-16 06:40:49,842 - app.utils.users - INFO - Create new token
+2025-01-16 06:40:49,975 - app.utils.users - INFO - Get user by token
+2025-01-16 06:41:43,596 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:41:43,604 - app.utils.users - INFO - Validating password
+2025-01-16 06:41:43,660 - app.utils.users - INFO - Create new token
+2025-01-16 06:41:43,793 - app.utils.users - INFO - Get user by token
+2025-01-16 06:41:57,076 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:41:57,084 - app.utils.users - INFO - Validating password
+2025-01-16 06:41:57,139 - app.utils.users - INFO - Create new token
+2025-01-16 06:41:57,268 - app.utils.users - INFO - Get user by token
+2025-01-16 06:42:24,455 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:42:24,473 - app.utils.users - INFO - Validating password
+2025-01-16 06:42:24,529 - app.utils.users - INFO - Create new token
+2025-01-16 06:42:26,552 - app.utils.users - INFO - Get user by token
+2025-01-16 06:42:26,558 - app.routes.order - INFO - Updating order id:3
+2025-01-16 06:42:26,711 - app.utils.cache - INFO - Delete order_id:3 from cache
+2025-01-16 06:42:26,711 - app.utils.order - INFO - Changing order id:3 status StatusEnum.confirmed->StatusEnum.cancelled
+2025-01-16 06:43:06,964 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:43:06,972 - app.utils.users - INFO - Validating password
+2025-01-16 06:43:07,029 - app.utils.users - INFO - Create new token
+2025-01-16 06:43:07,154 - app.utils.users - INFO - Get user by token
+2025-01-16 06:44:15,134 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:44:15,142 - app.utils.users - INFO - Validating password
+2025-01-16 06:44:15,199 - app.utils.users - INFO - Create new token
+2025-01-16 06:44:15,320 - app.utils.users - INFO - Get user by token
+2025-01-16 06:46:08,573 - app.utils.users - INFO - Get user by token
+2025-01-16 06:46:08,578 - app.routes.order - INFO - Updating order id:3
+2025-01-16 06:46:08,713 - app.utils.cache - INFO - Delete order_id:3 from cache
+2025-01-16 06:46:08,713 - app.utils.order - INFO - Changing order id:3 status StatusEnum.cancelled->StatusEnum.cancelled
+2025-01-16 06:46:13,400 - app.utils.users - INFO - Get user by token
+2025-01-16 06:46:13,404 - app.routes.order - INFO - Updating order id:3
+2025-01-16 06:46:13,544 - app.utils.cache - INFO - Delete order_id:3 from cache
+2025-01-16 06:46:13,544 - app.utils.order - INFO - Changing order id:3 status StatusEnum.cancelled->StatusEnum.pending
+2025-01-16 06:47:33,466 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:47:33,474 - app.utils.users - INFO - Validating password
+2025-01-16 06:47:33,530 - app.utils.users - INFO - Create new token
+2025-01-16 06:47:33,659 - app.utils.users - INFO - Get user by token
+2025-01-16 06:47:33,665 - app.routes.order - INFO - Updating order id:3
+2025-01-16 06:47:33,725 - app.utils.cache - INFO - Delete order_id:3 from cache
+2025-01-16 06:47:33,725 - app.utils.order - INFO - Changing order id:3 status StatusEnum.pending->StatusEnum.pending
+2025-01-16 06:51:22,580 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:51:22,589 - app.utils.users - INFO - Validating password
+2025-01-16 06:51:22,647 - app.utils.users - INFO - Create new token
+2025-01-16 06:51:22,779 - app.utils.users - INFO - Get user by token
+2025-01-16 06:51:22,786 - app.routes.order - INFO - Updating order id:3
+2025-01-16 06:51:22,845 - app.utils.cache - INFO - Delete order_id:3 from cache
+2025-01-16 06:51:22,846 - app.utils.order - INFO - Changing order id:3 status StatusEnum.pending->StatusEnum.pending
+2025-01-16 06:51:38,015 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:51:38,023 - app.utils.users - INFO - Validating password
+2025-01-16 06:51:38,080 - app.utils.users - INFO - Create new token
+2025-01-16 06:51:38,136 - app.utils.users - INFO - Get user by token
+2025-01-16 06:51:38,142 - app.routes.order - INFO - Updating order id:3
+2025-01-16 06:51:38,193 - app.utils.cache - INFO - Delete order_id:3 from cache
+2025-01-16 06:51:38,193 - app.utils.order - INFO - Changing order id:3 status StatusEnum.pending->StatusEnum.cancelled
+2025-01-16 06:54:08,368 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:54:08,376 - app.utils.users - INFO - Validating password
+2025-01-16 06:54:08,432 - app.utils.users - INFO - Create new token
+2025-01-16 06:54:08,555 - app.utils.users - INFO - Get user by token
+2025-01-16 06:54:08,561 - app.routes.order - INFO - Updating order id:3
+2025-01-16 06:54:08,621 - app.utils.cache - INFO - Delete order_id:3 from cache
+2025-01-16 06:54:08,621 - app.utils.order - INFO - Changing order id:3 status StatusEnum.cancelled->StatusEnum.pending
+2025-01-16 06:56:14,107 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:56:14,116 - app.utils.users - INFO - Validating password
+2025-01-16 06:56:14,181 - app.utils.users - INFO - Create new token
+2025-01-16 06:56:16,955 - app.utils.users - INFO - Get user by token
+2025-01-16 06:58:31,113 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:58:31,121 - app.utils.users - INFO - Validating password
+2025-01-16 06:58:31,177 - app.utils.users - INFO - Create new token
+2025-01-16 06:58:35,948 - app.utils.users - INFO - Get user by token
+2025-01-16 06:58:36,104 - app.utils.cache - INFO - Delete order_id:8 from cache
+2025-01-16 06:58:36,105 - app.utils.order - INFO - Order id:8 deleted
+2025-01-16 06:58:48,499 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:58:48,508 - app.utils.users - INFO - Validating password
+2025-01-16 06:58:48,565 - app.utils.users - INFO - Create new token
+2025-01-16 06:59:32,140 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 06:59:32,150 - app.utils.users - INFO - Validating password
+2025-01-16 06:59:32,211 - app.utils.users - INFO - Create new token
+2025-01-16 07:00:25,433 - app.utils.users - INFO - Get user by token
+2025-01-16 07:00:25,567 - app.utils.cache - INFO - Delete order_id:9 from cache
+2025-01-16 07:00:25,567 - app.utils.order - INFO - Order id:9 deleted
+2025-01-16 07:00:43,803 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 07:00:43,811 - app.utils.users - INFO - Validating password
+2025-01-16 07:00:43,868 - app.utils.users - INFO - Create new token
+2025-01-16 07:00:50,823 - app.utils.users - INFO - Get user by token
+2025-01-16 07:01:29,778 - app.utils.users - INFO - Get user by token
+2025-01-16 07:01:29,933 - app.utils.cache - INFO - Delete order_id:7 from cache
+2025-01-16 07:01:29,933 - app.utils.order - INFO - Order id:7 deleted
+2025-01-16 07:02:38,912 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 07:02:38,926 - app.utils.users - INFO - Validating password
+2025-01-16 07:02:38,982 - app.utils.users - INFO - Create new token
+2025-01-16 07:02:39,122 - app.utils.users - INFO - Get user by token
+2025-01-16 07:02:39,155 - app.utils.order - WARNING - Order with ID 9 not found
+2025-01-16 07:03:13,565 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 07:03:13,573 - app.utils.users - INFO - Validating password
+2025-01-16 07:03:13,629 - app.utils.users - INFO - Create new token
+2025-01-16 07:03:13,755 - app.utils.users - INFO - Get user by token
+2025-01-16 07:03:13,810 - app.utils.cache - INFO - Delete order_id:6 from cache
+2025-01-16 07:03:13,810 - app.utils.order - INFO - Order id:6 deleted
+2025-01-16 07:06:44,978 - app.routes.auth - INFO - Creating a new user
+2025-01-16 07:06:45,168 - app.utils.users - INFO - Create new token
+2025-01-16 07:08:31,278 - app.routes.auth - INFO - Creating a new user
+2025-01-16 07:08:31,460 - app.utils.users - INFO - Create new token

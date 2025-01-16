@@ -12,7 +12,7 @@ logger = get_logger(__name__)
 
 @user_router.post("/sign-up", summary="Creating a new user", description="Creates a new user and returns token",
                   response_model=User)
-async def signup(user: UserCreate = Depends()):
+async def signup(user: UserCreate):
     logger.info("Creating a new user")
     return await create_user(user)
 
