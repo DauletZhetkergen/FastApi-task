@@ -368,3 +368,24 @@
 2025-01-16 07:06:45,168 - app.utils.users - INFO - Create new token
 2025-01-16 07:08:31,278 - app.routes.auth - INFO - Creating a new user
 2025-01-16 07:08:31,460 - app.utils.users - INFO - Create new token
+2025-01-16 04:44:09,153 - app.routes.auth - INFO - Creating a new user
+2025-01-16 04:44:09,320 - app.utils.users - INFO - Create new token
+2025-01-16 04:45:01,108 - app.routes.auth - INFO - Creating a new user
+2025-01-16 04:45:01,277 - app.utils.users - INFO - Create new token
+2025-01-16 04:45:09,766 - app.routes.auth - INFO - Authenticating admin
+2025-01-16 04:45:09,768 - app.utils.users - INFO - Validating password
+2025-01-16 04:45:09,821 - app.utils.users - INFO - Create new token
+2025-01-16 04:45:22,611 - app.utils.users - INFO - Get user by token
+2025-01-16 04:45:22,749 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:45:22,750 - app.routes.admin - INFO - User:2 GET orders
+2025-01-16 04:45:22,866 - app.utils.order - INFO - GET orders with: 
+2025-01-16 04:49:25,754 - app.routes.auth - INFO - Creating a new user
+2025-01-16 04:49:25,852 - app.utils.users - INFO - Create new token
+2025-01-16 04:49:33,817 - app.routes.auth - INFO - Authenticating daulet
+2025-01-16 04:49:33,819 - app.utils.users - INFO - Validating password
+2025-01-16 04:49:33,872 - app.utils.users - INFO - Create new token
+2025-01-16 04:49:44,996 - app.utils.users - INFO - Get user by token
+2025-01-16 04:49:45,107 - app.utils.dependecies - INFO - Check admin role
+2025-01-16 04:49:45,107 - app.utils.dependecies - WARNING - 1 tried admin routes
+2025-01-16 04:55:04,986 - app.routes.admin - INFO - Getting metrics
+2025-01-16 04:55:23,118 - app.routes.admin - INFO - Getting metrics

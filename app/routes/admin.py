@@ -52,7 +52,7 @@ async def delete_order(order_id: int, admin_user: User = Depends(check_admin_rol
 
 
 @admin_router.get("/metrics")
-async def get_metrics():
+async def get_metrics(admin_user: User = Depends(check_admin_role)):
     try:
         with open(metric_logger_path, "r") as file:
             lines = file.readlines()

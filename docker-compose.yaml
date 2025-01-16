@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; alembic revision --autogenerate; alembic upgrade head; uvicorn app.main:app --host 0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - 8008:8000
+    environment:
+      - DATABASE_URL=postgresql://$POSTGRESS_DB_USER:$POSTGRESS_DB_PASSWORD@$POSTGRES_DB_HOST:$POSTGRESS_DB_HOST_PORT/$POSTGRES_DB_NAME
+    depends_on:
+      - db
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=$POSTGRESS_DB_USER
+      - POSTGRES_PASSWORD=$POSTGRESS_DB_PASSWORD
+      - POSTGRES_DB=$POSTGRES_DB_NAME
+volumes:
+  postgres_data:
